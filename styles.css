@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  width: 100;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.logo h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/*main*/
+.input {
+  padding: 10px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+  background-color: #ffffff;
+  border: grey 2px solid;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+/*admin*/
+.mainIndex {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#containerProducts {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  justify-content: space-between;
+  align-content: space-between;
+  justify-items: center;
+  align-items: center;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #ffffff;
+  border: grey 2px solid;
+  border-radius: 10px;
+  height: 300px;
+  width: 300px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.carrito {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #ffffff;
+  border: grey 2px solid;
+  border-radius: 10px;
+  height: auto;
+  width: 300px;
+  padding: 20px;
+  margin: 20px;
+}
+.containerButtonCarrito {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  padding: 5px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  bottom: 0;
+}
+
+/*responsive*/
+@media (max-width: 768px) {
+  #containerProducts {
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+@media (max-width: 425px) {
+  #containerProducts {
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
