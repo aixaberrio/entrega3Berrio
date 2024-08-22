@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   formulario.addEventListener("submit", (event) => {
     event.preventDefault();
     let product = {
-      id: (products.length + 1).toString(), // Utiliza la longitud del array para generar el ID
+      id: (products.length + 1).toString(),
       title: productTitle,
       price: Number(productPrice),
       category: productCategory,
@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     products.push(product);
     localStorage.setItem("products", JSON.stringify(products));
+    formulario.reset();
     renderProducts(products);
   });
-
   renderProducts(products);
 });
