@@ -59,3 +59,5 @@ const sumarDelCarrito = (id) => {
     renderProducts(carrito);
   }
 };
+
+renderProducts(carrito);
