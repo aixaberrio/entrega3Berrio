@@ -22,9 +22,23 @@ const renderProducts = (products) => {
 renderProducts(carrito);
 
 const eliminarDelCarrito = (id) => {
-  carrito = carrito.filter((elemento) => elemento.id !== id);
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  renderProducts(carrito);
+  Swal.fire({
+    title: "Estas seguro de eliminar el producto del carrito?",
+    showDenyButton: true,
+    showCancelButton: false,
+    confirmButtonText: "Eliminar",
+    denyButtonText: "No eliminar",
+    icon: "warning",
+  }).then((res) => {
+    if (res.isConfirmed) {
+      carrito = carrito.filter((elemento) => elemento.id !== id);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      renderProducts(carrito);
+      Swal.fire({ title: "Eliminado", timer: 3000, icon: "success" });
+    } else if (res.isDenied) {
+      Swal.fire({ title: "No se elimino", timer: 3000, icon: "info" });
+    }
+  });
 };
 
 const restarDelCarrito = (id) => {
